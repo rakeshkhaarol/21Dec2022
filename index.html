@@ -23,6 +23,7 @@
                 background: #CEDECE;
                 margin: auto;
                 border-radius: 10px;
+                font-size: 2em;
                 
             }
             form input {
@@ -38,6 +39,10 @@
                
 
             }
+            body #result{
+              text-align: right;
+              line-height: 80px;
+            }
         </style>
     </head>
     <body>
@@ -45,30 +50,41 @@
             <div id="result"></div>
             <div >
                 <form  >
-                    <input type="button" value="7" >
-                    <input type="button" value="8">
-                    <input type="button" value="9">
-                    <input type="button" value="/">
+                    <input type="button" value="7" onclick="rk(this)">
+                    <input type="button" value="8"onclick="rk(this)">
+                    <input type="button" value="9"onclick="rk(this)">
+                    <input type="button" value="/"onclick="rk(this)">
                 </form>
                 <form  >
-                    <input type="button" value="4" >
-                    <input type="button" value="5">
-                    <input type="button" value="6">
-                    <input type="button" value="*">
+                    <input type="button" value="4" onclick="rk(this)">
+                    <input type="button" value="5"onclick="rk(this)">
+                    <input type="button" value="6" onclick="rk(this)">
+                    <input type="button" value="*"onclick="rk(this)">
                 </form>
                 <form  >
-                    <input type="button" value="1" >
-                    <input type="button" value="2">
-                    <input type="button" value="3">
-                    <input type="button" value="-">
+                    <input type="button" value="1" onclick="rk(this)">
+                    <input type="button" value="2"onclick="rk(this)">
+                    <input type="button" value="3"onclick="rk(this)">
+                    <input type="button" value="-"onclick="rk(this)">
                 </form>
                 <form class="flex Container">
-                    <input type="button" value="0" >
-                    <input type="button" value="." style="margin-left: 20px !important;">
-                    <input type="button" value="+">
-                    <input type="button" value="=">
+                    <input type="button" value="0" onclick="rk(this)">
+                    <input type="button" value="." onclick="rk(this)">
+                    <input type="button" value="+"onclick="rk(this)">
+                    <input type="button" value="="onclick="rk(this)">
                 </form>
             </div>
         </div>
+        <script>
+            //i can write the js code cloging the body tag
+            let r1 =document.querySelector('#result')
+
+
+
+            function rk(element){
+                console.log(element.value)
+                r1.innerHTML = r1.innerHTML + element.value;
+            }
+        </script>
     </body>
 </html>

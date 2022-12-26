@@ -42,6 +42,7 @@
             body #result{
               text-align: right;
               line-height: 80px;
+              padding-right: 10px;
             }
         </style>
     </head>
@@ -97,7 +98,7 @@
                         operatorbuttonclick =true;
 
                         operator = "*";
-                        leftvalue = r1.innerHTML
+                        leftvalue = r1.innerHTML;
                         
 
                        
@@ -107,6 +108,30 @@
                         
                         window.localStorage.setItem("operator","*")
 
+                        break;
+                    case "/":
+                        operatorbuttonclick =true;
+                        operator ='/';
+                        leftvalue = r1.innerHTML;
+                        console.log('division')
+                        window.localStorage.setItem('leftvalue is',leftvalue)
+                        window.localStorage.setItem("operator","/")
+                        break;
+                    case "+":
+                        operatorbuttonclick =true;
+                        operator ='+';
+                        leftvalue = r1.innerHTML;
+                        console.log('addition')
+                        window.localStorage.setItem('leftvalue is',leftvalue)
+                        window.localStorage.setItem("operator","+")
+                        break;
+                    case "-":
+                        operatorbuttonclick =true;
+                        operator ='-';
+                        leftvalue = r1.innerHTML;
+                        console.log('subtraction')
+                        window.localStorage.setItem('leftvalue is',leftvalue)
+                        window.localStorage.setItem("operator","-")
                         break;
                     case "=":
                         //write the code
@@ -124,9 +149,26 @@
                                 console.log(leftvalue*rightvalue)
                                 r1.innerHTML = leftvalue*rightvalue;
                                 break;
+                            case"/":
+                                leftvalue = parseFloat(leftvalue)//convert string into namber
+                                rightvalue = parseFloat(rightvalue)//convert string into namber
+                                console.log(leftvalue/rightvalue)
+                                r1.innerHTML = leftvalue/rightvalue;
+                                break;
+                            case"+":
+                                leftvalue = parseFloat(leftvalue)//convert string into namber
+                                rightvalue = parseFloat(rightvalue)//convert string into namber
+                                console.log(leftvalue+rightvalue)
+                                r1.innerHTML = leftvalue+rightvalue;
+                                break;
+                            case"-":
+                                leftvalue = parseFloat(leftvalue)//convert string into namber
+                                rightvalue = parseFloat(rightvalue)//convert string into namber
+                                console.log(leftvalue-rightvalue)
+                                r1.innerHTML = leftvalue-rightvalue;
+                                break;
                             default:
                         }
-
                         break;
                        
                     default:

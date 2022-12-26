@@ -77,14 +77,69 @@
         </div>
         <script>
             //i can write the js code cloging the body tag
+            //globle variable
             let r1 =document.querySelector('#result')
+            var leftvalue;
+            let rightvalue;
+            let operator;
 
-
+            //create a boolian
+            let operatorbuttonclick = false;
 
             function rk(element){
                 console.log(element.value)
                 r1.innerHTML = r1.innerHTML + element.value;
+
+
+                switch(element.value){
+                    case "*":
+                        //write the code
+                        operatorbuttonclick =true;
+
+                        operator = "*";
+                        leftvalue = r1.innerHTML
+                        
+
+                       
+                        console.log("leftvalue is "+leftvalue)
+                        console.log("rightvalue is ",rightvalue)
+                        window.localStorage.setItem("leftvalue is",leftvalue)
+                        
+                        window.localStorage.setItem("operator","*")
+
+                        break;
+                    case "=":
+                        //write the code
+                        operatorbuttonclick =false;
+
+
+                        window.localStorage.getItem('leftvalue');
+                        window.localStorage.getItem('rightvalue');
+                        window.localStorage.getItem('operator');
+
+                        switch(operator ){
+                            case"*":
+                                leftvalue = parseFloat(leftvalue)//convert string into namber
+                                rightvalue = parseFloat(rightvalue)//convert string into namber
+                                console.log(leftvalue*rightvalue)
+                                r1.innerHTML = leftvalue*rightvalue;
+                                break;
+                            default:
+                        }
+
+                        break;
+                       
+                    default:
+                }
+                
+                if(operatorbuttonclick = true){
+                    rightvalue = element.value
+                    window.localStorage.setItem("rightvalue is",rightvalue)
+                    console.log('rightvalue ')
+                }
+                
             }
+            
         </script>
     </body>
 </html>
